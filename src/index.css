@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eef2f5;
+  font-family: 'Inter', sans-serif;
+  color: #1a2c3e;
+  line-height: 1.45;
+  padding: 2rem 1.5rem;
+}
+
+/* main CV container - card style */
+.cv-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+/* two column layout (modern) */
+.cv-inner {
+  display: grid;
+  grid-template-columns: 34% 66%;
+}
+
+/* ========== LEFT SIDEBAR (darker elegant) ========== */
+.sidebar {
+  background: #0f2a3b;
+  color: #eef4fa;
+  padding: 2rem 1.5rem;
+}
+
+.profile h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: white;
+  margin-bottom: 0.4rem;
+  word-break: break-word;
+}
+
+.profile .tagline {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #bfd9f0;
+  border-left: 3px solid #4aa3ff;
+  padding-left: 0.7rem;
+  margin: 0.75rem 0 1.2rem 0;
+}
+
+.contact-info {
+  margin: 1.8rem 0 1.5rem 0;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #9bbfd9;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.contact-details p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  word-break: break-word;
+}
+
+.contact-details i {
+  width: 22px;
+  font-size: 1rem;
+  color: #7bb3da;
+}
+
+/* skills & language */
+.skill-block {
+  margin: 2rem 0 1.8rem 0;
+}
+
+.skill-items {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.skill-items li {
+  font-size: 0.85rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.skill-items li i {
+  color: #7bb3da;
+  font-size: 0.75rem;
+  width: 18px;
+  margin-top: 3px;
+}
+
+.lang-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.lang-name {
+  font-weight: 500;
+}
+
+.lang-level {
+  color: #cce3ff;
+  font-size: 0.75rem;
+}
+
+/* ========== RIGHT CONTENT (white area) ========== */
+.main-content {
+  background: white;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.right-section {
+  margin-bottom: 2rem;
+}
+
+.right-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f2a3b;
+  border-left: 4px solid #2d7fcf;
+  padding-left: 12px;
+  margin-bottom: 1rem;
+  letter-spacing: -0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.right-title i {
+  color: #2d7fcf;
+  font-size: 1.2rem;
+}
+
+.about-text {
+  font-size: 0.9rem;
+  color: #2c3e44;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+/* experience cards, education */
+.exp-item,
+.edu-item {
+  margin-bottom: 1.3rem;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.exp-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0f2a3b;
+}
+
+.exp-date {
+  font-size: 0.7rem;
+  background: #eef2f8;
+  padding: 2px 8px;
+  border-radius: 20px;
+  color: #2c5a74;
+  font-weight: 500;
+}
+
+.exp-org {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4d6e85;
+  margin-bottom: 0.4rem;
+}
+
+.exp-desc {
+  font-size: 0.85rem;
+  color: #2c3e44;
+  line-height: 1.45;
+  margin-top: 0.3rem;
+  padding-left: 0.2rem;
+}
+
+.exp-desc ul {
+  padding-left: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.exp-desc li {
+  margin-bottom: 0.25rem;
+}
+
+/* badge for master */
+.badge-current {
+  font-size: 0.7rem;
+  background: #e0f0fe;
+  color: #0369a1;
+  border-radius: 40px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* mobile responsive */
+@media (max-width: 780px) {
+  body {
+    padding: 1rem;
+  }
+  .cv-inner {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    padding: 1.8rem;
+  }
+  .main-content {
+    padding: 1.8rem;
+  }
+  .exp-header {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+  .cv-container {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .badge-current {
+    background: #ccc;
+  }
+}

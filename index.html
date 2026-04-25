@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lay Sopanha | Cyber CV & Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ----- RESET & GLOBAL ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0a0c10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Landscape A4 Canvas (1123x794 similar to A4 landscape) */
+        .cv-container {
+            width: 1123px;
+            height: 794px;
+            background: #1f242d;
+            color: white;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 44px 70px;
+            box-shadow: 0 25px 45px rgba(0, 238, 255, 0.15), 0 0 0 1px rgba(0, 238, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        /* glowing bg orb */
+        .glow-circle {
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(0, 238, 255, 0.12), transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .glow-circle-right {
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 238, 255, 0.06), transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* ----- HEADER / NAVBAR ----- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 20;
+            margin-bottom: 28px;
+        }
+
+        .logo { 
+            font-size: 30px; 
+            font-weight: 700; 
+            cursor: default;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff, #0ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo span { 
+            color: #0ef; 
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: #0ef;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #eef5ff;
+            margin-left: 34px;
+            font-size: 16px;
+            transition: 0.25s;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: #0ef;
+            text-shadow: 0 0 4px #0ef;
+        }
+
+        /* ----- MAIN CONTENT (TEXT + HEXAGON) ----- */
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            z-index: 10;
+            gap: 30px;
+        }
+
+        .text-section {
+            max-width: 560px;
+        }
+
+        .text-section h3 {
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #c4eaff;
+        }
+
+        .text-section h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin: 8px 0 5px;
+            background: linear-gradient(to right, #fff, #0ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .text-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .text-section h2 span {
+            color: #0ef;
+            font-weight: 600;
+            border-bottom: 2px solid #0ef;
+            padding-bottom: 3px;
+        }
+
+        .text-section p {
+            font-size: 14.5px;
+            line-height: 1.65;
+            color: #cfdee9;
+            margin-bottom: 32px;
+            text-align: justify;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-bottom: 35px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            background: transparent;
+            border: 2px solid #0ef;
+            border-radius: 50%;
+            color: #0ef;
+            font-size: 20px;
+            transition: 0.35s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #0ef;
+            color: #1f242d;
+            box-shadow: 0 0 18px #0ef;
+            transform: translateY(-3px);
+        }
+
+        /* Download Button */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 32px;
+            background: #0ef;
+            border-radius: 50px;
+            box-shadow: 0 0 12px #0ef;
+            font-size: 16px;
+            font-weight: 600;
+            color: #0a121f;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-download i {
+            font-size: 18px;
+        }
+
+        .btn-download:hover {
+            box-shadow: 0 0 28px #0ef;
+            transform: scale(1.03);
+            background: #1dc4e0;
+            color: #000;
+        }
+
+        /* Hexagon Profile Image - enhanced */
+        .image-section {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hexagon-outer {
+            width: 360px;
+            height: 400px;
+            background: linear-gradient(145deg, #0ef, #00a3b0);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(0 0 22px rgba(0, 238, 255, 0.7));
+            transition: 0.3s;
+        }
+
+        .hexagon-inner {
+            width: 345px;
+            height: 385px;
+            background: #1f242d;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hexagon-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .hexagon-inner:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fallback message if image missing */
+        .profile-fallback {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2a3743, #111820);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #0ef;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* subtle floating animation */
+        @keyframes softGlow {
+            0% { filter: drop-shadow(0 0 15px #0ef);}
+            100% { filter: drop-shadow(0 0 28px #0ef);}
+        }
+        .hexagon-outer {
+            animation: softGlow 2s infinite alternate;
+        }
+
+        /* Responsive fallback */
+        @media (max-width: 1150px) {
+            .cv-container {
+                transform: scale(0.95);
+                margin: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <div class="glow-circle"></div>
+    <div class="glow-circle-right"></div>
+    
+    <header>
+        <div class="logo">Portfolio<span>.</span></div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="text-section">
+            <h3>Hello, It's Me</h3>
+            <h1>Lay Sopanha</h1>
+            <h2>And I'm a <span>Admin Assistant & Student</span></h2>
+            <p>
+                Computer Science student at AGA Institute. Experienced in administration, 
+                Microsoft Office, Photoshop, and Networking. Passionate about creating 
+                efficient workflows and digital solutions. I combine technical curiosity 
+                with organizational excellence to deliver modern results.
+            </p>
+
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <!-- FIXED PDF DOWNLOAD PATH: points to /src/assets/pdf/Lay_Sopanha_CV.pdf -->
+            <!-- The "download" attribute suggests a download, but if file exists it will work.
+                 We also ensure relative path from root of project, according to folder structure:
+                 project root /src/assets/pdf/Lay_Sopanha_CV.pdf 
+            -->
+            <a href="./src/assets/pdf/CURRICULUM VITAE.1.pdf" download="CURRICULUM VITAE.1.pdf" class="btn-download">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+        </div>
+
+        <div class="image-section">
+            <div class="hexagon-outer">
+                <div class="hexagon-inner">
+                    <!-- profile image from src/assets/images/profile.png -->
+                    <img src="./src/assets/images/profile.png" 
+                         alt="Lay Sopanha Profile"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'profile-fallback\'><i class=\'fas fa-user-circle\' style=\'font-size:70px; margin-bottom:10px;display:block\'></i><br>📸 Profile Image</div>';">
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- optional small script to ensure download fallback hint in console (just for dev clarity) -->
+<script>
+    (function() {
+        // preload console hint about PDF location (does not affect functionality)
+        console.log("CV Download link points to: ./src/assets/pdf/Lay_Sopanha_CV.pdf");
+        console.log("Place your PDF file inside 'src/assets/pdf/' directory with exact name 'Lay_Sopanha_CV.pdf'");
+        console.log("Profile image expected at: ./src/assets/images/profile.png (optional but recommended)");
+        
+        // Additional: if download link fails (404), we can show a subtle optional message? Not invasive.
+        const downloadBtn = document.querySelector('.btn-download');
+        if(downloadBtn) {
+            downloadBtn.addEventListener('click', function(e) {
+                // No action needed — just to ensure we don't block navigation.
+                // The browser will attempt download. If file missing, standard 404 page appears.
+                // We can add optional note: but no extra popup to keep clean.
+            });
+        }
+    })();
+</script>
+</body>
+</html>
